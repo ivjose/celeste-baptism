@@ -1,4 +1,5 @@
 ---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 export interface Props {
   title: string;
   description: string;
@@ -13,16 +14,15 @@ const { title, description, image, next, prev, canonicalURL } =
 
 <!-- Common -->
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{title}</title>
 <meta name="description" content={description} />
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link
-  href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-  rel="stylesheet"
+
+<GoogleFontsOptimizer
+  url="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
 />
 <link rel="stylesheet" href="/global.css" />
-<link rel="icon" type="image/x-icon"  href="/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap.xml" />
 <!-- RSS -->
@@ -53,7 +53,7 @@ const { title, description, image, next, prev, canonicalURL } =
 <meta property="og:description" content={description} />
 {image && <meta property="og:image" content={new URL(image, canonicalURL)} />}
 <!-- Twitter -->
-<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
 <meta name="twitter:site" content="@astro" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
