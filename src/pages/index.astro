@@ -1,19 +1,25 @@
 ---
 import { Icon } from "astro-icon";
 import { Picture } from "@astrojs/image/components";
-import localImage from '../assets/celecte-invitation-img.png';
+import localImage from "../assets/celecte-invitation-img.png";
 import MainLayout from "../layout/MainLayout.astro";
 import ButtonLink from "../Components/ButtonLink.astro";
 ---
 
 <MainLayout>
-  <div class="py-6 flex flex-col w-full h-full max-w-[1200px] items-center mx-auto">
+  <div
+    class="py-6 flex flex-col w-full h-full max-w-[1200px] items-center mx-auto"
+  >
+ 
     <Picture
       src={localImage}
       widths={[300, 600]}
+	  width={600}
+      height={600}
       aspectRatio={1 / 1}
       sizes="(max-width: 600px) 100vw, 600px"
       alt="Celecte Invitation"
+	  class="w-full"
     />
 
     <div class="w-full text-center flex flex-col space-y-8 px-4 mt-8">
@@ -33,8 +39,8 @@ import ButtonLink from "../Components/ButtonLink.astro";
         </div>
       </ButtonLink>
     </div>
-	<div class="mt-4 py-12">
-		<h3 class="italic text-white text-5xl">See you there!</h3>
-	</div>
+    <div class="mt-4 py-12">
+      <h3 class="italic text-white text-5xl">See you there!</h3>
+    </div>
   </div>
 </MainLayout>
