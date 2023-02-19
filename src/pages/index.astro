@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import localImage from '../assets/celecte-invitation-img.png';
+import MainLayout from "../layout/MainLayout.astro";
+import ButtonLink from "../Components/ButtonLink.astro";
+---
+
+<MainLayout>
+  <div class="py-6 flex flex-col w-full h-full max-w-[1200px] items-center mx-auto">
+    <Picture
+      src={localImage}
+      widths={[300, 600, 800]}
+      aspectRatio={1 / 1}
+      sizes="(max-width: 1200px) 100vw, 1200px"
+      alt="Celecte Invitation"
+    />
+
+    <div class="w-full text-center flex flex-col space-y-8 px-4 mt-8">
+      <h4 class="text-2xl font-bold text-white mb-4">Reception Location:</h4>
+      <ButtonLink
+        url="https://ul.waze.com/ul?place=ChIJlYQnljx_vTMRTLwxV_tScIU&ll=14.22344730%2C120.97705520&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+      >
+        <div class="flex w-full items-center">
+          <Icon name="mdi:waze" class="h-10 w-10 flex-a" />
+          <span class="flex-1 -ml-8">WAZE</span>
+        </div>
+      </ButtonLink>
+      <ButtonLink url="https://goo.gl/maps/RxU2SuWXmSoCL39D8">
+        <div class="flex w-full items-center">
+          <Icon name="mdi:map-marker" class="h-10 w-10 flex-a" />
+          <span class="flex-1 -ml-8">GOOGLE MAP</span>
+        </div>
+      </ButtonLink>
+    </div>
+	<div class="mt-4 py-12">
+		<h3 class="italic text-white text-5xl">See you there!</h3>
+	</div>
+  </div>
+</MainLayout>
